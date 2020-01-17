@@ -74,6 +74,10 @@ int main()
 				break;
 			case 4:
 				cout << "You chose to remove a trip." << endl;
+				if (diar.getTripList().empty()) {
+					cout << "The file is currently empty and you can not remove any trips.\n" << endl;
+					break;
+				}
 				diar.removeTrip();
 				break;
 			case 5:

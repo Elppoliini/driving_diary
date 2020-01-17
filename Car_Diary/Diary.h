@@ -18,9 +18,11 @@ public:
 	void writeToFile(std::string path);
 	bool readFromFile(std::string path);
 	double consumption();
+	std::vector<Trip> getTripList() const;
 
 
 private:
 	std::vector<Trip> tripList;
+	std::vector<unsigned int> searchOptions;
 };
 
