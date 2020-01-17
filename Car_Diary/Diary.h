@@ -16,6 +16,8 @@ public:
 	void removeTrip();
 	void clearAllTrips();
 	void writeToFile(std::string path);
+	bool readFromFile(std::string path);
+	double consumption();
 
 
 private:

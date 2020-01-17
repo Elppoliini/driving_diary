@@ -9,14 +9,16 @@ using namespace std;
 void Trip::initTrip() {
 	cout << "Enter start location:" << endl;
 	startLocation.setLocation();
-	cout << "Enter starting time" << endl;
-	startingTime.setTime();
-	cout << "Odometer value when the trip started:" << endl;
-	ometer.setStart();
 	cout << "Enter end location:" << endl;
 	endLocation.setLocation();
+	cout << "Enter starting time" << endl;
+	startingTime.setTime();
 	cout << "Enter ending time" << endl;
 	endingTime.setTime();
+	cout << "Odometer value when the trip started:" << endl;
+	ometer.setStart();
+	
+	
 	cout << "Odometer value when the trip ended:" << endl;
 	ometer.setEnd();
 	buyingFuel();
@@ -87,4 +89,42 @@ ostream& operator<<(ostream& os, const Trip& t) {
 	os << t.ometer.getEnd() << endl;
 	os << t.boughtFuel << endl;
 	return os;
+}
+
+istream& operator>>(istream& is, Trip& t) {
+	
+	string startLocationString, endLocationString;
+	int starth, startm, endh, endm;
+	int os, oe;
+	int bought;
+		
+		
+	//PARSE
+	getline(is,startLocationString);
+	getline(is, endLocationString);
+	is >> starth;
+	is >> startm;
+	is >> endh;
+	is >> endm;
+	is >> os;
+	is >> oe;
+	is >> bought;
+	while (is.peek() == '\n') {
+		is.get();
+	}
+
+	//END OF PARSE
+
+	Location startLocation = Location(startLocationString);
+	Location endLocation = Location(endLocationString);
+	Odometer ometer(os, oe);
+	Time startTime(starth, startm);
+	Time endTime(endh, endm);
+		
+	t.setValues(startLocation, endLocation, ometer, startTime, endTime, bought);
+	return is;
+}
+
+int Trip::getBoughtFuel() {
+	return boughtFuel;
 }

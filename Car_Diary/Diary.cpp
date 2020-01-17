@@ -71,3 +71,28 @@ void Diary::writeToFile(string path) {
 		file << endl;
 	}
 }
+
+bool Diary::readFromFile(std::string path) {
+	ifstream file;
+	file.open(path, ios_base::in);
+	if (!file.is_open()) {
+		return false;
+	}
+	while (!file.eof()) {
+		Trip t;
+		file >> t;
+		tripList.push_back(t);
+	}
+
+	return true;
+}
+
+double Diary::consumption() {
+	int bought = 0, distance = 0;
+	for (Trip& t : tripList) {
+		distance += t.getDistance();
+		bought += t.getBoughtFuel();
+	}
+
+	return (double)bought / ((double)distance / 100);
+}

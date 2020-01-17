@@ -7,6 +7,10 @@ public:
 		start = -1;
 		end = -1;
 	}
+	Odometer(int s, int e) {
+		start = s;
+		end = e;
+	}
 	int distance();
 	void setEnd();
 	void setStart();

@@ -39,7 +39,7 @@ int main()
 		cout << "3: Find trips from a specific range" << endl;
 		cout << "4: Remove a trip" << endl;
 		cout << "5: Clear diary" << endl;
-		cout << "6: Count average fuel consumption" << endl;
+		cout << "6:Count average fuel consumption" << endl;
 		cout << "7: Save and exit" << endl;
 		cin >> input;
 		int command = 0;
@@ -70,7 +70,7 @@ int main()
 				diar.findTripByRange();
 				break;
 			case 4:
-				cout << "You chose to remove trip." << endl;
+				cout << "You chose to remove  trip." << endl;
 				diar.removeTrip();
 				break;
 			case 5:

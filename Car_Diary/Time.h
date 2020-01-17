@@ -7,6 +7,10 @@ public:
 		hours = -1;
 		minutes = -1;
 	}
+	Time(int h, int m) {
+		hours = h;
+		minutes = m;
+	}
 	void setTime();
 	std::string getTime() const;
 	int setHours();
