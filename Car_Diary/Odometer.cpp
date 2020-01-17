@@ -19,10 +19,10 @@ void Odometer::setEnd() {
 	}
 }
 
-int Odometer::getStart() {
+int Odometer::getStart() const {
 	return start;
 }
 
-int Odometer::getEnd() {
+int Odometer::getEnd() const {
 	return end;
 }

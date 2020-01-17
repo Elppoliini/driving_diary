@@ -8,7 +8,7 @@ void Time::setTime() {
 	setHours();
 	setMinutes();
 }
-string Time::getTime() {
+string Time::getTime() const {
 	if (hours == -1 || minutes == -1) {
 		return "The time have not been set yet or it have been deleted.";
 	}
@@ -29,9 +29,8 @@ string Time::getTime() {
 		displayMinutes = to_string(getMinutes());
 	}
 
-	timeDisplayed = displayHours + ":" + displayMinutes;
+	return displayHours + ":" + displayMinutes;
 
-	return timeDisplayed;
 }
 int Time::setHours() {
 	cout << "Enter hours:" << endl;
@@ -59,7 +58,7 @@ int Time::setHours() {
 	}
 	return hours;
 }
-int Time::getHours() {
+int Time::getHours() const {
 	return hours;
 }
 int Time::setMinutes() {
@@ -88,7 +87,7 @@ int Time::setMinutes() {
 	}
 	return minutes;
 }
-int Time::getMinutes() {
+int Time::getMinutes() const {
 	return minutes;
 }
 

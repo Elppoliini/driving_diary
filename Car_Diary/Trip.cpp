@@ -75,3 +75,16 @@ void Trip::buyingFuel() {
 int Trip::getDistance() {
 	return ometer.distance();
 }
+
+ostream& operator<<(ostream& os, const Trip& t) {
+	os << t.startLocation.LocationInfo() << endl;
+	os << t.endLocation.LocationInfo() << endl;
+	os << t.startingTime.getHours() << endl;
+	os << t.startingTime.getMinutes() << endl;
+	os << t.endingTime.getHours() << endl;
+	os << t.endingTime.getMinutes() << endl;
+	os << t.ometer.getStart() << endl;
+	os << t.ometer.getEnd() << endl;
+	os << t.boughtFuel << endl;
+	return os;
+}

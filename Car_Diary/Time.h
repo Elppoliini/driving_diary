@@ -8,11 +8,11 @@ public:
 		minutes = -1;
 	}
 	void setTime();
-	std::string getTime();
+	std::string getTime() const;
 	int setHours();
-	int getHours();
+	int getHours() const;
 	int setMinutes();
-	int getMinutes();
+	int getMinutes() const;
 	void deleteTime();
 
 private:

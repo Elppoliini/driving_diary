@@ -90,6 +90,7 @@ int main()
 			case 6:
 				cout << "You chose to save and exit." << endl;
 				keepGoing = false;
+				diar.writeToFile("driving_diary.txt");
 				break;
 			default:
 				cout << "Oops. Something went wrong." << endl;

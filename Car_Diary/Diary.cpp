@@ -1,5 +1,6 @@
 #include "Diary.h"
 #include <iostream>
+#include <fstream>
 #include <vector>
 
 using namespace std;
@@ -60,4 +61,13 @@ void Diary::removeTrip() {
 void Diary::clearAllTrips() {
 	tripList.clear();
 	cout << "The Diary have been initialized and the saved trips have been removed. " << endl;
+}
+
+void Diary::writeToFile(string path) {
+	ofstream file;
+	file.open(path, ios_base::out | ios_base::trunc);
+	for (Trip& t : tripList) {
+		file << t;
+		file << endl;
+	}
 }

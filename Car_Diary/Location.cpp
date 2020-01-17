@@ -14,6 +14,6 @@ void Location::clearLocation() {
 	loc.clear();
 }
 
-string Location::LocationInfo() {
+string Location::LocationInfo() const {
 	return loc;
 }

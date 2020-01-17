@@ -20,6 +20,7 @@ public:
 	void summary();
 	void buyingFuel();
 	int getDistance();
+	friend std::ostream& operator<<(std::ostream& os, const Trip& t);
 
 private:
 	Location startLocation = Location();

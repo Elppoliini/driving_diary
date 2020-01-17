@@ -11,6 +11,6 @@ public:
 	}
 	void setLocation();
 	void clearLocation();
-	std::string LocationInfo();
+	std::string LocationInfo() const;
 };
 

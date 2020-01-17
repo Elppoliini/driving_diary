@@ -9,11 +9,13 @@ public:
 	Diary() {
 		tripList = {};
 	}
+
 	void getAll();
 	void findTripByRange();
 	void newEntry();
 	void removeTrip();
 	void clearAllTrips();
+	void writeToFile(std::string path);
 
 
 private:

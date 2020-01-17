@@ -10,8 +10,8 @@ public:
 	int distance();
 	void setEnd();
 	void setStart();
-	int getStart();
-	int getEnd();
+	int getStart() const;
+	int getEnd() const;
 	
 private:
 	int start;
